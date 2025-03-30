@@ -1,0 +1,47 @@
+Let A[p.......r] be an array of n size(elements).
+-p = starting index
+-r = ending index
+
+int partition(int* A, int p, int r)
+{}
+
+    APPROACH:
+        Let i be index varibale , and place it at A[p-1].
+        Let j be a index variable.
+        PROPERTY:
+            Window 1:
+            A[p] -> A[i] == All elements within the range should be
+            arrange in such a way that they should be less equal
+            A[r].
+
+            Window 2:
+            A[i+1] -> A[j-1] == These elements should be strictly greater
+            than A[r].
+        Swap(A[r],A[i+1])
+
+
+int partition(int* A, int p, int r)
+{
+    int i;  Index for window 1
+    int j;  Index for iteration and window 2
+    int pivot;  Store the value of pivot index A[r]
+    int tmp;    Temporary variable for swapping
+
+    pivot = A[r];
+    for(j = p; j < r; j++)
+    {
+        if(A[j] <= pivot)
+        {
+            i++;    It should go in window 1
+            tmp = A[i];
+            A[i] = A[j];
+            A[j] = tmp;
+        }
+    }
+    tmp = A[r];
+    A[r] = A[i+1];
+    A[i+1] = tmp;
+
+    return i+1;
+}  
+    
