@@ -3,13 +3,13 @@ using namespace std;
 
 void mergeTwoSortedArrays(int* arr, int s, int e)
 {
-    // cout << s << ", " << e << "\n" ;
-    // cout << "Before sorting : \n";
-    // for(int i = 0; i < 8; i++)
-    // {
-    //     cout << arr[i] << ", ";
-    // }
-    // cout << endl;
+    cout << s << ", " << e << "\n" ;
+    cout << "Before sorting : \n";
+    for(int i = 0; i < 8; i++)
+    {
+        cout << arr[i] << ", ";
+    }
+    cout << endl;
 
     //Find mid
     int mid = (s+e)/2;
